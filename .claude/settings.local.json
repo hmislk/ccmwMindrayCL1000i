@@ -2,7 +2,15 @@
   "permissions": {
     "allow": [
       "Read(//d/OneDrive/02 Company/02 CoOp/LIMS Middleware/**)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:hapifhir.github.io)",
+      "WebFetch(domain:saravanansubramanian.com)",
+      "Bash(mvn clean:*)",
+      "Bash(javac:*)",
+      "Bash(\"D:\\Program Files\\NetBeans-18\\netbeans\\java\\maven\\bin\\mvn.cmd\" clean compile)",
+      "Bash(\"D:\\Program Files\\NetBeans-18\\netbeans\\java\\maven\\bin\\mvn.cmd\" --version)",
+      "Bash(where mvn)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

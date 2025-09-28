@@ -7,14 +7,14 @@ import org.carecode.lims.libraries.PatientRecord;
 import org.carecode.lims.libraries.QueryRecord;
 import org.carecode.lims.libraries.ResultsRecord;
 
-public class Indiko {
+public class MindrayCL1000i {
 
     static boolean testingPullingTestOrders = false;
     static boolean testingPushingTestResults = false;
 
-    public static final Logger logger = LogManager.getLogger(Indiko.class);
-    
-    private static IndikoServer server = new IndikoServer(); // Make the server instance static for restart
+    public static final Logger logger = LogManager.getLogger(MindrayCL1000i.class);
+
+    private static MindrayHL7Server server = new MindrayHL7Server(); // Make the server instance static for restart
 
     public static void main(String[] args) {
         if (testingPullingTestOrders) {
@@ -44,7 +44,7 @@ public class Indiko {
             LISCommunicator.pushResults(pdb);
             System.exit(0);
         }
-        logger.info("Starting Indiko middleware...");
+        logger.info("Starting MindrayCL1000i middleware...");
         try {
             logger.info("Loading settings...");
             SettingsLoader.loadSettings();
@@ -55,7 +55,7 @@ public class Indiko {
         }
 
         int port = SettingsLoader.getSettings().getAnalyzerDetails().getAnalyzerPort();
-        server = new IndikoServer();
+        server = new MindrayHL7Server();
         server.start(port);
     }
 
@@ -69,7 +69,7 @@ public class Indiko {
             Thread.sleep(2000); // Pause for 2 seconds before restarting
 
             logger.info("Restarting server on port " + port + "...");
-            server = new IndikoServer(); // Create a new instance of the server
+            server = new MindrayHL7Server(); // Create a new instance of the server
             server.start(port);
             logger.info("Server restarted successfully.");
 
