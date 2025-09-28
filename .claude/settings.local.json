@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//d/OneDrive/02 Company/02 CoOp/LIMS Middleware/**)",
+      "WebSearch"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
